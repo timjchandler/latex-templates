@@ -1,7 +1,7 @@
 \ProvidesClass{tjc-paper}[A general paper template]
 \LoadClass{article}
 
-% Packages
+%%%%%% Packages                         %%%%%%
 \RequirePackage{fancyhdr}               % Allow fancy headers and footers
 \RequirePackage{helvet}                 % Allow helvetica font
 
