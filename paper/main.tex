@@ -1,8 +1,21 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   This file should be left largely unchanged. The only    %
+%   additions needed are adding in \input{...} commands     % 
+%   for new sections as they are added to the src/          %
+%   directory.                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass{tjc-paper}
 
 \begin{document}
 
+\newtitlepage{
+    \input{src/0.tex}                   % Input abstract
+}
+{this is the title of the report}       %%% CHANGE %%% The title
+{Authors Name}                          %%% CHANGE %%% The name of the author
+{cloudberry.png}                        %%% CHANGE %%% The logo image
 
-\input{src/1.tex}
+\input{src/1.tex}                       % Read in file from src/ directory
 
 \end{document}

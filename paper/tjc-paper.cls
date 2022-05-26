@@ -5,6 +5,11 @@
 \RequirePackage{fancyhdr}               % Allow fancy headers and footers
 \RequirePackage{helvet}                 % Allow helvetica font
 \RequirePackage[a4paper, margin=1.7cm]{geometry}% Reduce margins, set a4
+\RequirePackage{babel}                  % For preventing end of line hyphenation
+\RequirePackage{ragged2e}               % For centering the title
+\RequirePackage{graphicx}               % For images
+
+\graphicspath{{./img/}}
 
 %%%%%% Editable Variables               %%%%%%
 \newcommand{\organisation}{cloudberries}% Insert organisation name here
@@ -29,10 +34,49 @@
 %%%%%% Additional Commands              %%%%%%
 \newcommand{\newabstract}[1]
 {
-    \begin{center}
-    \begin{minipage}{0.6\textwidth}
+    \vspace*{5mm}                       % Leave space before the abstract
+    \begin{center}                      % Center the abstract
+    \begin{minipage}{0.6\textwidth}     % Can be adjusted to change width of abstract
         #1
     \end{minipage}
     \end{center}
+    \vspace{5mm}                        % Add space after the abstract
 }
 
+\newcommand{\newtitlepage}[4]
+{
+    \vspace*{25mm}                      % Add whitespace before title
+    \begin{center}                      % Center title minipage
+        \begin{minipage}{0.8\textwidth}
+            \begin{hyphenrules}{nohyphenation}  % Prevent splitting words accross lines
+                \hrule\vspace*{5mm}             % Add ruled line above
+                \begin{center}                  % Align the text center
+                    \textbf{\Huge\MakeUppercase{#2}}    % Insert title and force uppercase
+                    \vspace*{5mm}\hrule         % Add ruled line below
+                    \vspace*{15mm}              % Add space between title and date
+                    {\large\today}\\\vspace*{5mm}   % Add date and spacing below
+                    {\Large #3}                 % Add the authors name
+                \end{center}    
+            \end{hyphenrules}
+        \end{minipage}
+    \end{center}
+    
+    \vspace*{2cm}
+    \begin{center}                              
+        \includegraphics[height=25mm]{#4}       % Add the logo
+    \end{center}    
+    \vspace*{2cm}
+    
+    \thispagestyle{plain}               % Remove the header from this page
+    \newabstract{#1}                    % Include abstract
+    \newpage                            % End the title page
+    
+    \vspace*{\fill}                     % Balance the space above the ToC
+    \begin{center}
+        \begin{minipage}{0.8\textwidth} % Reduce width for ToC
+            \tableofcontents            % Add table of contents
+        \end{minipage}
+    \end{center}    
+    \vspace*{\fill}                     % Balance the space below the ToC
+    \newpage                            % End ToC page
+}
