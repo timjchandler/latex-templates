@@ -18,8 +18,8 @@
 \graphicspath{{./img/}}
 
 %%%%%% Editable Variables               %%%%%%
-\newcommand{\organisation}{cloudberries}% Insert organisation name here
-\newcommand{\headertext}{--DRAFT--}     % Insert header text here
+% \newcommand{\organisation}{cloudberries}% Insert organisation name here
+% \newcommand{\headertext}{--DRAFT--}     % Insert header text here
 %%%%%% End Editables                    %%%%%% 
 
 %%%%%% Styling                          %%%%%% 
@@ -28,8 +28,8 @@
 \renewcommand{\familydefault}{\sfdefault}   % Set font to default sans serif
 
 % Margins
-\addtolength{\topmargin}{.8cm}          % Reduce top margin
-\addtolength{\textheight}{-1.5cm}       % Reduce bottom margin
+\addtolength{\topmargin}{12mm}          % Reduce top margin
+\addtolength{\textheight}{-20mm}       % Reduce bottom margin
 
 % Header and footer
 \fancyhead[L]{\headertext}              % Write title on header of each page
@@ -85,4 +85,14 @@
     \end{center}    
     \vspace*{\fill}                     % Balance the space below the ToC
     \newpage                            % End ToC page
+}
+
+\newcommand{\setheader}[1]
+{
+    \newcommand{\headertext}{#1}        % Set \headertext variable
+}
+
+\newcommand{\setorganisation}[1]
+{
+    \newcommand{\organisation}{#1}      % Set \organisation variable
 }

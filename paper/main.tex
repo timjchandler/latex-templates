@@ -1,11 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   This file should be left largely unchanged. The only    %
-%   additions needed are adding in \input{...} commands     % 
-%   for new sections as they are added to the src/          %
-%   directory.                                              %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  This is the root file for the document. lines that should be changed  %%%
+%%%  are denoted with "%%% CHANGE %%%" comments. The main bulk of the      %%%
+%%%  content can be edited in the numbered files within the src/ directory %%%
+%%%  Additional numbered files should be added, in the order that they     %%%
+%%%  will appear within the document                                       %%%
 
 \documentclass{tjc-paper}
+
+\setheader{Header Text}                 %%% CHANGE %%% The text to appear in the header
+\setorganisation{cloudberries}          %%% CHANGE %%% Organisation name
 
 \begin{document}
 
@@ -17,5 +19,7 @@
 {cloudberry.png}                        %%% CHANGE %%% The logo image
 
 \input{src/1.tex}                       % Read in file from src/ directory
+\input{src/2.tex}                       % Read in second file 
+                                        %%% CHANGE %%% Repeat inputs as necessary ... 
 
 \end{document}
