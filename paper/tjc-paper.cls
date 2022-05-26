@@ -9,6 +9,12 @@
 \RequirePackage{ragged2e}               % For centering the title
 \RequirePackage{graphicx}               % For images
 
+%%%%%% OPTIONAL                         %%%%%% Comment out as necessary
+\RequirePackage{hyperref}               % For clickable links
+\RequirePackage{lipsum}
+%%%%%% End optional
+
+
 \graphicspath{{./img/}}
 
 %%%%%% Editable Variables               %%%%%%
